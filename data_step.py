@@ -4,7 +4,7 @@ import pandas as pd
 
 print("Starte das Programm")
 
-bev_org=pd.read_excel(r'C:\Users\lovit\Desktop\DEV\Dashboard_Bev\Konzept\Bev_data.xlsx',dtype={'AGS': int, 'Kreis': str,'Jahr': datetime,'Geschlecht': str,'Altersjahre': str,'Bevoelkerung': int})
+bev_org=pd.read_excel(r'Bev_data.xlsx',dtype={'AGS': int, 'Kreis': str,'Jahr': datetime,'Geschlecht': str,'Altersjahre': str,'Bevoelkerung': int})
 print("Einlesen erfolgreich")
 
 bev_org["J"]=pd.DatetimeIndex(bev_org['Jahr']).year
