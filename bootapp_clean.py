@@ -3,12 +3,15 @@ from dash import dcc
 from dash import html
 from dash.dependencies import Output, Input
 import dash_bootstrap_components as dbc
-from data_step import df_01
 import plotly.graph_objects as gp
 import numpy as np
-#Data
-fg_df=df_01
+#from datetime import datetime
+import pandas as pd
 
+
+#Data
+
+df_01=pd.read_csv('pyramid.csv')
 
 app= dash.Dash((__name__),external_stylesheets=[dbc.themes.FLATLY],
             meta_tags=[{'name': 'viewport',
@@ -28,8 +31,8 @@ app.layout = dbc.Container([
         dbc.Row([
             dbc.Col([
             
-                dcc.Dropdown(id='bev_check', options=[{'label': x,'value': x} for x in sorted(fg_df['J'].unique())], value=2020,className='dropdown'),
-                dcc.Dropdown(id='bev_check2', options=[{'label': x,'value': x} for x in sorted(fg_df['Kreis'].unique())], value='Ansbach (Lkr)',className='dropdown'),  
+                dcc.Dropdown(id='bev_check', options=[{'label': x,'value': x} for x in sorted(df_01['J'].unique())], value=2020,className='dropdown'),
+                dcc.Dropdown(id='bev_check2', options=[{'label': x,'value': x} for x in sorted(df_01['Kreis'].unique())], value='Ansbach (Lkr)',className='dropdown'),  
                     dcc.Graph(id='bev_graph',figure={}),
                 ], width={'size':5,'offset':0,'order':1}),                
         
