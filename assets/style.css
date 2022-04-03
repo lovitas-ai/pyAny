@@ -1,7 +1,7 @@
 body {
     font-family: "Lato", sans-serif;
     margin: 0;
-    background-color: #F7F7F7;
+    background-color: #ffffff;
 }
 
 .header {
@@ -46,3 +46,6 @@ body {
     margin-bottom: 24px;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.18);
 }
+.divBorder{
+    border: 2px solid rgb(151, 150, 150);
+   }
